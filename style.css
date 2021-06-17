@@ -1,0 +1,190 @@
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;   
+}
+
+    
+a {
+    text-decoration: none;
+}
+
+h1{
+    color: rgb(255, 0, 0);
+    margin-left: 50px;    
+}
+
+.puanSayac{
+    color: rgb(4, 207, 4);
+    font-size: 25px;
+    margin-left: 50px;
+    margin-bottom: -3px;
+}
+
+.puanSayac1{
+    color: rgb(4, 207, 4);
+    font-size: 25px;
+    margin-left: 50px;
+    margin-bottom: -3px;
+}
+
+#dogruSoru{
+    border: solid rgb(4, 207, 4);
+    border-radius: 15px;
+    padding-left: 10px;
+    color: white;
+    font-size: 35px;
+    margin-left: 50px; 
+    font-weight: bold; 
+    width: 100px;
+}
+#soru_sayisi{
+    color: white;
+    font-size: 35px;
+    position:absolute;
+    left:105px;
+    top: 135px;
+    font-weight: bold; 
+}
+#sayıcı{
+    color: white;
+    font-size: 35px;
+    position:absolute;
+    left:120px;
+    top: 276px;
+    font-weight: bold;
+}
+#soru_panel{
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    bottom: 230px;;
+    left: 297px;
+    border-radius: 20px;
+    border: solid rgb(4, 207, 4);;
+}
+#resim{
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+
+#metin_panel{
+    width: 800px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.575);
+    position: absolute;
+    left:300px;
+    top:450px;
+    border-radius: 20px;
+
+}
+#sorular{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-left: 20px;
+}
+#cizgi{
+    position: absolute;
+    left:1150px;
+    bottom: 670px;
+    width: 500px;
+    background-color: rgb(4, 207, 4);
+    border: none;
+    height: 5px;
+}
+#alt_cizgi{
+    position: relative;
+    top:460px;        
+}
+#cevapText{
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    left: 1170px;
+    bottom: 670px;
+    display: none;
+}
+#metin{
+    position: relative;
+    top:470px;
+    display: flex ;
+    justify-content: center ;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+#basla_btn{
+    position: absolute;
+    left: 1150px;
+    bottom: 600px;
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium';
+    
+}
+#tekrar_btn{
+    position: absolute;
+    left: 1150px;
+    bottom: 600px;
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: none;
+    font-family:'Franklin Gothic Medium';
+}
+
+.cevap_buton{
+    width: 500px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: none;
+}
+
+#cevap_btn1{
+    position: absolute;
+    left: 1150px;
+    bottom: 580px;
+}
+
+#cevap_btn2{
+    position: absolute;
+    left: 1150px;
+    bottom: 480px;
+}
+
+#cevap_btn3{
+    position: absolute;
+    left: 1150px;
+    bottom: 380px;
+}
+#cevap_btn4{
+    position: absolute;
+    left: 1150px;
+    bottom: 280px;
+}
+#cevap_btn5{
+    position: absolute;
+    left: 1150px;
+    bottom: 180px;
+}
+
+#metin_panel2{
+    width: 800px;
+    height: 160px;
+    background-color: rgba(0,0, 0,0.5);
+    position: absolute;
+    left:300px;
+    top:590px;
+    border-radius: 20px;
+
+}
+
+
+
