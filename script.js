@@ -96,6 +96,21 @@ function cevap_yerlestir( ){
 
 
 
+function sayac(){   
+    zaman= setInterval(() => {
+        sayıcı.innerHTML=second;
+        second=second-1;
+        zaman_kontrol();
+    }, 1000);
+}
+
+function zaman_kontrol(){
+    if(second<0){
+        clearInterval(zaman);
+        dogru_cevap();
+        butonListener();
+    }
+}
 
 
 var soruSayisi = 0;
@@ -104,6 +119,8 @@ let buton_sirasi;
 let second;
 let zaman;
 dogru_sayisi=0;
+
+
 cevap_btn1.addEventListener('click', function(){
     buton_degeri=cevap_btn1.getAttribute('value');
     buton_sirasi=1;
@@ -138,21 +155,63 @@ cevap_btn2.addEventListener('click', function(){
 
 
 
-function cevap_yerlestir( ){
-    cevap_btn1.setAttribute('value',buton1_cevap[soruSayisi ]);
-    cevap_btn2.setAttribute('value',buton2_cevap[soruSayisi ]);
-    cevap_btn3.setAttribute('value',buton3_cevap[soruSayisi ]);
-    cevap_btn4.setAttribute('value',buton4_cevap[soruSayisi ]);
-    cevap_btn5.setAttribute('value',buton5_cevap[soruSayisi ]);
+
+ function butonListener(){
+
+    if(soruSayisi<4){ 
+        
+        setTimeout(function(){
+            soruSayisi++;
+            init();
+        },1000 );
+    }else{
+        setTimeout(() => {
+            oyun_bitti();
+        }, 1000);   
+    }
 }
+
+
+
+
+
+function oyun_bitti(){
+    let ımg = document.createElement('img');
+    ımg.setAttribute('src', sorular_resim[5]);
+    ımg.setAttribute('id','resim')
+    soru_panel.appendChild(ımg);
+    second=0;
+
+    cevapText.innerHTML='OYUN BİTTİ'
+    cevap_btn1.style.display='none';
+    cevap_btn2.style.display='none';
+    cevap_btn3.style.display='none';
+    cevap_btn4.style.display='none';
+    cevap_btn5.style.display='none';
+
+    metin_panel.lastChild.remove();
+    let yazi = document.createElement('p');
+    yazi.setAttribute('id','sorular')
+    yazi.innerHTML="Toplam puan :"+ dogru_sayisi+"  / 5";
+    metin_panel.appendChild(yazi);
+    tekrar_btn.style.display='inline';
+
+    tekrar_btn.addEventListener('click', function(){
+        soruSayisi=0;
+        dogruSoru.innerHTML='0 / ';
+        tekrar_btn.style.display='none';
+        init();
+    });
+}
+
+
+
 
 
 function cevap_kontrol(buton_degeri,buton_sirasi){
 
- 
-
-
     if(dogru_cevaplar[soruSayisi]==buton_degeri){
+        
         dogru_sayisi++;
         cevapText.innerHTML='Doğru';
         dogruSoru.innerHTML= dogru_sayisi+"  /";
@@ -261,81 +320,5 @@ function dogru_cevap(){
                 cevap_btn2.style.background='white';
             },1000 );
     }
-
-}
-
-
-function butonListener(){
-
-    
-
-    
-    if(soruSayisi<4){ 
-        
-        setTimeout(function(){
-            soruSayisi++;
-            init();
-        },1000 );
-    }else{
-        setTimeout(() => {
-            oyun_bitti();
-        }, 1000);
-        
-    }
-
-}
-function oyun_bitti(){
-    let ımg = document.createElement('img');
-    ımg.setAttribute('src', sorular_resim[5]);
-    ımg.setAttribute('id','resim')
-    soru_panel.appendChild(ımg);
-    second=0;
-    cevapText.innerHTML='OYUN BİTTİ'
-    cevap_btn1.style.display='none';
-    cevap_btn2.style.display='none';
-    cevap_btn3.style.display='none';
-    cevap_btn4.style.display='none';
-    cevap_btn5.style.display='none';
-
-    metin_panel.lastChild.remove();
-    let yazi = document.createElement('p');
-    yazi.setAttribute('id','sorular')
-    yazi.innerHTML="Toplam puan :"+ dogru_sayisi+"  / 5";
-    metin_panel.appendChild(yazi);
-    tekrar_btn.style.display='inline';
-    tekrar_btn.addEventListener('click', function(){
-        soruSayisi=0;
-        dogruSoru.innerHTML='0 / ';
-        tekrar_btn.style.display='none';
-        init();
-        
-        
-
-    });
-    
-
-
-
-
-}
-
-
-
-
-function sayac(){   
-    zaman= setInterval(() => {
-        sayıcı.innerHTML=second;
-        second=second-1;
-        zaman_kontrol();
-    }, 1000);
-}
-function zaman_kontrol(){
-    if(second<0){
-        clearInterval(zaman);
-        dogru_cevap();
-        butonListener();
-    }
-
-
 
 }
